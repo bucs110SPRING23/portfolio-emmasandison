@@ -1,5 +1,6 @@
 import pygame
 
+
 pygame.init()
 
 # gets the display and makes it full screen
@@ -21,10 +22,11 @@ pygame.time.wait(500)
 screen.fill([0, 0, 255])
 
 font = pygame.font.SysFont(None, 72)
-text = font.render("Hello world", True, "black")
+text = font.render("Hello Emma", True, "green")
 
 screen.blit(text, screen.get_rect().center)
 
 pygame.display.flip()
 
 pygame.time.wait(2000)
+
