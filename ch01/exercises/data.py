@@ -8,6 +8,4 @@ print(10%15)
 print(10%10)
 print(0%10)
 print(10/15)
-The last answer is an irrational number that is not rounded off. 
-
 
