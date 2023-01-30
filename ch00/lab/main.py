@@ -1,6 +1,5 @@
 import pygame
 
-
 pygame.init()
 
 # gets the display and makes it full screen
@@ -29,4 +28,3 @@ screen.blit(text, screen.get_rect().center)
 pygame.display.flip()
 
 pygame.time.wait(2000)
-
