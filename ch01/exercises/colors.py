@@ -1,10 +1,8 @@
-mycolors=[
-    "Pink",
-    "Orange",
-    "Blue",
-    "Green",
-    "Purple"
-    ]
+mycolors=["Pink", "Orange", "Blue", "Green", "Purple"]
 list_size=len(mycolors)
 print("I have",list_size,"colors")
-print(mycolors)
+print(mycolors[0])
+print(mycolors[1])
+print(mycolors[2])
+print(mycolors[3])
+print(mycolors[4])
