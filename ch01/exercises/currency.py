@@ -6,4 +6,3 @@ total = float(rate*amount)
 result = float(total-3)
 print(result)
 
-
