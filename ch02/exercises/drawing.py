@@ -1,0 +1,16 @@
+import turtle
+wn = turtle.Screen()
+wn.bgcolor('green')
+donatello = turtle.Turtle()
+donatello.color('pink')
+donatello.shape('turtle')
+sides = int(input("How many sides does the shape have?"))
+length = int(input("What is the length of each side?"))
+angle = (360/sides)
+for i in range(sides):
+    donatello.left(length)
+    donatello.forward(length)
+donatello.up()
+donatello.forward(100)
+donatello.down()
+wn.exitonclick()
