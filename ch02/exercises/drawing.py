@@ -2,7 +2,7 @@ import turtle
 wn = turtle.Screen()
 wn.bgcolor('green')
 donatello = turtle.Turtle()
-donatello.color('pink')
+donatello.color('orange')
 donatello.shape('turtle')
 sides = int(input("How many sides does the shape have?"))
 length = int(input("What is the length of each side?"))
