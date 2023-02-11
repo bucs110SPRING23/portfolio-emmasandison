@@ -1,16 +1,18 @@
 import turtle
-wn = turtle.Screen()
-wn.bgcolor('green')
-donatello = turtle.Turtle()
-donatello.color('orange')
-donatello.shape('turtle')
-sides = int(input("How many sides does the shape have?"))
-length = int(input("What is the length of each side?"))
-angle = (360/sides)
-for i in range(sides):
-    donatello.left(length)
-    donatello.forward(length)
-donatello.up()
-donatello.forward(100)
-donatello.down()
-wn.exitonclick()
+
+window = turtle.Screen()
+
+window.bgcolor('green')
+
+t = turtle.Turtle()
+t.color('pink')
+t.shape('turtle')
+n = int(input("Enter the number of the sides of the shape : "))
+
+l = int(input("Enter the length of the sides of the polygon : "))
+
+for _ in range (n):
+    turtle.forward(l)
+    turtle.right(360 / n)
+
+window.exitonclick()
