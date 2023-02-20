@@ -39,14 +39,13 @@ p.clear()
 
 
 # Race 2
-for _ in range(10): 
+for _ in range(0,11): 
     t.forward(random.randrange(0,11))
     p.forward(random.randrange(0,11))
-
-t.penup()
-t.goto(-100,20)
-p.penup()
-p.goto(-100,-20)
+    t.penup()
+    t.goto(-100,20)
+    p.penup()
+    p.goto(-100,-20)
 
 
 # Part B
@@ -158,4 +157,3 @@ screen.fill("black")
 
 
 window.exitonclick()
-
