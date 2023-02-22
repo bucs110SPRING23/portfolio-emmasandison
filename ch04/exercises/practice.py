@@ -40,3 +40,32 @@ y = 6
 # temp = x  - - - swaps out values, x becomes y and y becomes x 
 # x = y
 # y = temp
+
+num = [5] * 3
+print(num)
+num = (5,) * 3  # single element tuples MUST have a trailing comma 
+print(num)
+
+# Tuples are used for efficiency - you just need parenthesis and trailing comma 
+
+contacts = [
+    ["bill", "867-5309"],
+    ["jane", "555-1212"]
+] 
+
+name = input("Enter a name: ") 
+
+# worse case scenario 
+# looping n times, where n is the number of items 
+for contact in contacts: 
+    if contact[0] == name: 
+        print(contact[1])
+        break 
+
+# relationship index => value 
+ # dictionary 
+ # list[index] = value 
+ # dictionary[key] = value 
+ # key/value pairs 
+ # keys must be unique 
+ # keys must be immutable 
