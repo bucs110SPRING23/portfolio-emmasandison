@@ -69,3 +69,17 @@ for contact in contacts:
  # key/value pairs 
  # keys must be unique 
  # keys must be immutable 
+
+# using ( ) makes it immutable, [ ] is mutable 
+
+contact["joe"] = "555-1213"
+contact["jane"] = "867-5309"
+
+for key, value in contact.items(): 
+    print(key)
+    print(value)
+
+# Strings 
+# Lists 
+# Tuples 
+# Dictionaries 

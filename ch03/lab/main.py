@@ -1,26 +1,19 @@
-import turtle #1. import modules
-import random
+import pygame  
 
-#Part A
-window = turtle.Screen() # 2.  Create a screen
-window.bgcolor('lightblue')
+pygame.init()
+width = 1440
+height = 900
+screen = pygame.display.set_mode((width,height))
+surface1 = pygame.Surface((width,height))
+surface1.fill("blue")
+pygame.draw.circle(surface1, "green", (720,450), 450)
+screen.blit(surface1, (0,0))
+exit = False
+while not exit: 
+    for event in pygame.event.get(): 
+        if event.type == pygame.QUIT: 
+            exit = True
+    pygame.display.update()
 
-michelangelo = turtle.Turtle() # 3.  Create two turtles
-leonardo = turtle.Turtle()
-michelangelo.color('orange')
-leonardo.color('blue')
-michelangelo.shape('turtle')
-leonardo.shape('turtle')
+pygame.quit()
 
-michelangelo.up() # 4. Pick up the pen so we don’t get lines
-leonardo.up()
-michelangelo.goto(-100,20)
-leonardo.goto(-100,-20)
-
-## 5. Your PART A code goes here
-
-
-# PART B - complete part B here
-
-
-window.exitonclick()
