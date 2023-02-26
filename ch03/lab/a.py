@@ -1,52 +1,54 @@
-import pygame 
-import random 
-import math 
+import pygame  
+import math
+import random
+
 pygame.init()
 
+while 1: 
+    width = 1440
+    height = 900
+    screen = pygame.display.set_mode((width,height))
+    surface1 = pygame.Surface((width,height))
+    surface1.fill("blue")
+    x = 720
+    y = 450 
+    center = (x,y)
+    pygame.draw.circle(surface1, "orange", center, 450)
+    x2 = 720
+    y2 = 0
+    start_pos = (x2,y2)
+    x3 = 720
+    y3 = 900
+    end_pos = (x3,y3)
+    pygame.draw.line(surface1, "purple", start_pos, end_pos, 4)
+    x4 = 270
+    y4 = 450
+    start_pos2 = (x4,y4)
+    x5 = 1170
+    y5 = 450
+    end_pos2 = (x5,y5)
+    pygame.draw.line(surface1, "purple", start_pos2, end_pos2, 4)
+    pygame.display.flip()
 
-# Part A
-window_height = 500
-window_width = 500
-window = pygame.display.set_mode([window_height,window_width])
-
-x = 250
-y = 250 
-center = (x,y)
-window.fill([0,128,255])
-pygame.draw.circle(window, "pink", center, 250)
-x2 = 0 
-y2 = 250
-start_pos = (x2,y2)
-x3 = 500
-y3 = 250 
-end_pos = (x3,y3)
-pygame.draw.line(window, "black", start_pos, end_pos, width = 2)
-x4 = 250 
-y4 = 500
-start_pos2 = (x4,y4)
-x5 = 250 
-y5 = 0 
-end_pos2 = (x5,y5)
-pygame.draw.line(window, "black", start_pos2, end_pos2, width = 2)
-pygame.display.flip()
-
-# Part B
-for i in range(10):
-    value = random.randrange(0, window_width)
-    value2 = random.randrange(0, window_height)
-    coordinates = (value, value2)
-    distance_from_circle = math.hypot (value-x, value2-y)
-    is_in_circle = distance_from_circle <= window_width/2
-    if is_in_circle == False: 
-        pygame.draw.circle(window,"red", coordinates,3)
-        pygame.display.flip()
-        pygame.time.wait(2500)
-    if is_in_circle == True: 
-        pygame.draw.circle(window,"green", coordinates,3)
-        pygame.display.flip()
-        pygame.time.wait(2500)
+    for i in range(10): 
+        x1 = random.randrange(0, width)
+        y1 = random.randrange(0,height)
+        coordinates = (x1, y1)
+        distance_from_center = math.hypot(x1-x, y1-y)
+        is_in_circle = distance_from_center <= width/2
+        if is_in_circle == False:
+            pygame.draw.circle(surface1,"red",coordinates,3)
+            pygame.display.flip()
+            pygame.time.wait(2500)
+        if is_in_circle == True: 
+            pygame.draw.circle(surface1,"green",coordinates,3)
+            pygame.display.flip()
+            pygame.time.wait(2500)
     print(coordinates)
-    print(distance_from_circle)
+    print(distance_from_center)
     print(is_in_circle)
+    pygame.display.flip()
+    pygame.time.wait(5000)
+    break 
 
 
