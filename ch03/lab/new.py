@@ -10,7 +10,7 @@ surface1 = pygame.Surface((width,height))
 surface1.fill("blue")
 
 x = 720
-y = 450 
+y = 450
 center = (x,y)
 pygame.draw.circle(surface1, "orange", center, 450)
 x2 = 720
@@ -27,6 +27,24 @@ x5 = 1170
 y5 = 450
 end_pos2 = (x5,y5)
 pygame.draw.line(surface1, "purple", start_pos2, end_pos2, 4)
+
+
+for i in range(10): 
+    x1 = random.randrange(0,width)
+    y1 = random.randrange(0,height)
+    coordinates = (x1, y1)
+    distance_from_center = math.hypot(x1-x, y1-y)
+    is_in_circle = distance_from_center <= width/2
+    if is_in_circle == False:
+        pygame.draw.circle(surface1,"red",coordinates,3)
+        pygame.display.flip()
+        pygame.time.wait(2500)
+    if is_in_circle == True: 
+        pygame.draw.circle(surface1,"green",coordinates,3)
+        pygame.display.flip()
+        pygame.time.wait(2500)
+
+
 screen.blit(surface1, (0,0))
 exit = False
 while not exit: 
@@ -36,24 +54,6 @@ while not exit:
     pygame.display.update()
 
 
-while 1: 
-    pygame.event.pump()
-    for i in range(10): 
-        x1 = random.randrange(0, width)
-        y1 = random.randrange(0,height)
-        coordinates = (x1, y1)
-        distance_from_center = math.hypot(x1-x, y1-y)
-        is_in_circle = distance_from_center <= width/2
-        if is_in_circle == False:
-            pygame.draw.circle(surface1,"red",coordinates,3)
-            pygame.display.flip()
-            pygame.time.wait(2500)
-        if is_in_circle == True: 
-            pygame.draw.circle(surface1,"green",coordinates,3)
-            pygame.display.flip()
-            pygame.time.wait(2500)
-    pygame.time.wait(2000)
-    break 
 
         
             
