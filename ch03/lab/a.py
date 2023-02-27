@@ -1,10 +1,9 @@
 import pygame  
 import math
 import random
-
+pygame.init()
 
 while 1: 
-    pygame.init()
     width = 1440
     height = 900
     screen = pygame.display.set_mode((width,height))
@@ -39,16 +38,16 @@ while 1:
         if is_in_circle == False:
             pygame.draw.circle(surface1,"red",coordinates,3)
             pygame.display.flip()
-            # pygame.time.wait(2500)
+            pygame.time.wait(2500)
         if is_in_circle == True: 
             pygame.draw.circle(surface1,"green",coordinates,3)
             pygame.display.flip()
-            # pygame.time.wait(2500)
+            pygame.time.wait(2500)
         print(coordinates)
         print(distance_from_center)
         print(is_in_circle)
     pygame.display.flip()
     pygame.time.wait(5000)
-     
+    break 
 
 
