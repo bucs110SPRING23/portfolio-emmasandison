@@ -83,3 +83,15 @@ for key, value in contact.items():
 # Lists 
 # Tuples 
 # Dictionaries 
+
+
+for i in range(10):
+    print(i)
+
+i = 0 # iterating variable 
+while i < 10:
+    print(i)
+    i += 1 # iterating variable must change or infinite loop occurs 
+
+# Any for loop can be recreated with a while loop 
+# Some while loops can not be recreated with for loops 

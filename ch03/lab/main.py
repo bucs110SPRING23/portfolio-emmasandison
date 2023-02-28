@@ -52,5 +52,7 @@ while not exit:
         if event.type == pygame.QUIT: 
             exit = True
     pygame.display.update()
+    # pygame.time.wait(250)
+    # break
 
             
