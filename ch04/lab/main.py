@@ -62,7 +62,9 @@ end_pos2 = (x5,y5)
 pygame.draw.line(surface1, "purple", start_pos2, end_pos2, 4)
 pygame.display.flip()
 
-players = ["red","blue"]
+players = ["Red","Blue"]
+players[0] = "Red"
+players[1] = "Blue"
 red_score = 0
 blue_score = 0
 
@@ -77,18 +79,20 @@ for i in range(10):
             print(player, "hit the target")
             pygame.draw.circle(surface1, player, coordinates, 3)
             pygame.draw.circle(surface1, player, coordinates, 3)
-        if player is players[0]:
-            red_score = red_score + 1
-        if player is players[1]:
-            blue_score = blue_score + 1
-        pygame.display.flip()
-        pygame.time.wait(2500)
+            if player is players[0]:
+                red_score = red_score + 1
+            if player is players[1]:
+                blue_score = blue_score + 1
+            pygame.display.flip()
+            pygame.time.wait(2500)
         if is_in_circle == False: 
             print(player, "did not hit the target")
             pygame.draw.circle(surface1,"yellow",coordinates,3)
             pygame.display.flip()
             pygame.time.wait(2500)
 if i == 9: 
+    print("Red has a score of", red_score)
+    print("Blue has a score of", blue_score)
     if red_score > blue_score: 
         print(players[0], "has won the game!")
     if blue_score > red_score: 
@@ -100,7 +104,6 @@ if i == 9:
 
 pygame.display.flip()
 pygame.time.wait(2500)
-
 
 
 if Guess is playerchoice: 
