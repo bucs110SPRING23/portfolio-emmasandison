@@ -67,3 +67,11 @@ def foo(var):
 var = 5
 foo(var)
 print(var)
+
+
+
+
+def my_func(x=0):
+    return x + x # x is scoped to my_func so it can't be assessed out of the function
+
+# nested functions execute from the inside out 
