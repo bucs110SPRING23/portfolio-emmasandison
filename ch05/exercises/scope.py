@@ -3,6 +3,8 @@
 def multiply(x,y):
     """
     This function takes the x input and multiplies it by the y input
+    args: x (int), y (int)
+    returns: (int)
     """   
     accumulator = 0      
     for _ in range(y):
@@ -14,6 +16,8 @@ def multiply(x,y):
 def exponent(x,y):
     """
     This function takes the number and squares it
+    args: x (int), y (int)
+    returns: (int)
     """
     accumulator = 1      
     for _ in range(y):
@@ -24,17 +28,19 @@ def exponent(x,y):
 def square(x): 
     """
     This function uses the previous function to square a number 
+    arg: x (int)
+    returns: (int)
     """
     return multiply(x,x)
 
 def main(): 
     x = int(input("Enter a number: "))
     y = int(input("Enter another number: "))
-    result = multiply(x,y)
+    result = multiply(x,y) # calling multiply function 
     print(result)
-    result = exponent(x,y)
+    result = exponent(x,y) # calling exponent function 
     print(result)
-    result = square(x)
+    result = square(x) # calling square function that utilizes multiply function 
     print(result)
 
 main()
