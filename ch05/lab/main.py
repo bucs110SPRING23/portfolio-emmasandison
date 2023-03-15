@@ -2,6 +2,9 @@ import pygame
 
 # Part A
 def main():
+    """
+    This function performs the 3n+1 calculations and retuns the number of iterations.
+    """
     upper_limit = 20
     def threenp1(n): 
         count = 0
@@ -18,9 +21,12 @@ def main():
     # key=n, value=count (# of iterations)
 
     def threenp1range(upper_limit):
+        """
+        This function stores the number of iterations (count) and the number (n) calculated using the 3n+1 function (key) in a dictionary.
+        """
         dict = {}
         for i in range(2, upper_limit + 1): 
-            dict[i] = threenp1(i)
+            dict[i] = threenp1(i) # i is value in range and then this value is ran through threenp1 function
         return dict
         
    

@@ -1,41 +1,42 @@
 # Write a function that multiplies two numbers together using a loop and accumulator (no multiplication) and return the resulting value
 
-def multiply(x):
+def multiply(x,y):
     """
-    This function takes the number and multiplies it by 3
-    """
-    running_total = 0         
-    for counter in range(3):
-        running_total = running_total + x
-    return running_total
+    This function takes the x input and multiplies it by the y input
+    """   
+    accumulator = 0      
+    for _ in range(y):
+        accumulator = accumulator + x
+    return accumulator 
 
-num = 5
-result = multiply(num) # Call function here
-print("The result of", num, "mulitplied by 3 is", result)
 
 # Write a function that takes a number and exponent as parameters and raises the number to the exponent and return the resulting value (no exponentiation)
-def squared(x):
+def exponent(x,y):
     """
     This function takes the number and squares it
     """
-    running_total = 0         
-    for counter in range(x):
-        running_total = running_total + x
-    return running_total   
-
-num = 10
-result = squared(num)
-print("The result of", num, "squared is", result)
-
+    accumulator = 1      
+    for _ in range(y):
+        accumulator = accumulator * x
+    return accumulator   
 
 # Write another function, called square, that takes a single parameter and squares it by only calling your multiplication or exponent function and return the resulting value only one line of code
-def square(): 
+def square(x): 
     """
     This function uses the previous function to square a number 
     """
-    num = 10
-    print("The result of", num, "squared is", squared(10))
-square()
+    return multiply(x,x)
 
+def main(): 
+    x = int(input("Enter a number: "))
+    y = int(input("Enter another number: "))
+    result = multiply(x,y)
+    print(result)
+    result = exponent(x,y)
+    print(result)
+    result = square(x)
+    print(result)
+
+main()
         
 
