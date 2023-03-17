@@ -1,7 +1,26 @@
-# mountain range 
+import turtle 
+window = turtle.Screen()
+window.bgcolor('lightblue')
 
-# one function for mountains 
-# one function for snow caps 
-# one function for trees 
 
-# or use functions for colors 
+def mountains(color): 
+    triangle = turtle.Turtle()
+    triangle.forward(100)
+    triangle.left(120)
+    triangle.forward(100)
+    triangle.left(120)
+    triangle.forward(100)
+    turtle.done()
+
+def main():
+    mountains("grey")
+
+main()
+
+
+    
+
+
+
+
+
