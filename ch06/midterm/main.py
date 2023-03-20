@@ -276,6 +276,11 @@ def tree3():
     turtle.done()
 
 def givearanking(num): 
+    """
+    This function records my ranking of the drawing
+    args: num(int)
+    return: rank (int)
+    """
     rank = num + 100 
     return rank
 
