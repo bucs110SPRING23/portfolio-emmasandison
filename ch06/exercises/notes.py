@@ -20,6 +20,7 @@ def main():
     # ideas = file_pointer.readlines() # prints data in file in lines 
     # print(ideas) # print(ideas[2]) - prints the third line in the file 
     # ideas = file_pointer.readline() # prints the first line of date in file 
+    # ideas = file_pointer.read() # reads entire file in a single string 
     # print(ideas)
     # ideas = file_pointer.readline() # prints the second line of data in file 
     # print(ideas)
