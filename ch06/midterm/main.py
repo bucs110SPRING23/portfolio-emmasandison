@@ -276,10 +276,13 @@ def tree3():
     turtle.done()
 
 def givearanking(num): 
-    rank = num + 10 
+    rank = num + 100 
     return rank
 
 def main():
+    num = 1
+    result = givearanking(num)
+    print("I give this drawing a ranking of", result)
     grass("limegreen")
     mountain1("grey")
     mountain2("darkgrey")
@@ -291,13 +294,8 @@ def main():
     tree1()
     tree2()
     tree3()
-    result = givearanking(100)
-    print("I ranked this drawing a", result)
-
+    
 main()
 
 window.exitonclick()
-
-
-
 
