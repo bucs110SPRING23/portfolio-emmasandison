@@ -5,13 +5,13 @@ window.bgcolor('lightblue')
 def grass(color): 
     """
     This function draws the grass
-    args: color (string)
+    args: color (str)
     """
     grassland = turtle.Turtle()
     grassland.penup()
     grassland.goto(-400,-200)
     grassland.pendown()
-    grassland.color("limegreen")
+    grassland.color("green")
     grassland.begin_fill()
     grassland.forward(800)
     grassland.right(90)
@@ -23,7 +23,7 @@ def grass(color):
 def mountain1(color): 
     """
     This function draws the left mountain
-    args: color (string)
+    args: color (str)
     """
     triangle1 = turtle.Turtle()
     triangle1.hideturtle()
@@ -45,8 +45,7 @@ def mountain1(color):
 def mountain2(color): 
     """
     This function draws the middle mountain
-    args: color (string)
-    return: triangle2
+    args: color (str)
     """
     triangle2 = turtle.Turtle()
     triangle2.hideturtle()
@@ -68,7 +67,7 @@ def mountain2(color):
 def mountain3(color): 
     """
     This function draws the right mountain
-    args: color (string)
+    args: color (str)
     """
     triangle3 = turtle.Turtle()
     triangle3.hideturtle()
@@ -90,7 +89,7 @@ def mountain3(color):
 def leftsnowcap(color): 
     """
     This function draws the left snow cap
-    args: color (string)
+    args: color (str)
     """
     leftsnow = turtle.Turtle()
     leftsnow.penup()
@@ -114,7 +113,7 @@ def leftsnowcap(color):
 def middlesnowcap(color): 
     """
     This function draws the middle snow cap 
-    args: color (string)
+    args: color (str)
     """
     middlesnow = turtle.Turtle()
     middlesnow.penup()
@@ -138,7 +137,7 @@ def middlesnowcap(color):
 def rightsnowcap(color): 
     """
     This function draws the right snow cap 
-    args: color (string)
+    args: color (str)
     """
     rightsnow = turtle.Turtle()
     rightsnow.penup()
@@ -162,7 +161,7 @@ def rightsnowcap(color):
 def sun(color): 
     """
     This function draws the sun 
-    args: color (string)
+    args: color (str)
     """
     circle = turtle.Turtle()
     circle.penup()
@@ -176,7 +175,7 @@ def sun(color):
 
 def tree1():
     """
-    This function draws the trees
+    This function draws the leftmost tree
     """
     firsttree = turtle.Turtle()
     firsttree.penup()
@@ -209,7 +208,7 @@ def tree1():
 
 def tree2():
     """
-    This function draws another tree
+    This function draws the middle tree
     """
     secondtree = turtle.Turtle()
     secondtree.penup()
@@ -242,7 +241,7 @@ def tree2():
 
 def tree3():
     """
-    This function draws another tree
+    This function draws the rightmost tree
     """
     thirdtree = turtle.Turtle()
     thirdtree.penup()
@@ -281,14 +280,14 @@ def givearanking(num):
     args: num(int)
     return: rank (int)
     """
-    rank = num + 100 
+    rank = num + 99 
     return rank
 
 def main():
     num = 1
     result = givearanking(num)
     print("I give this drawing a ranking of", result)
-    grass("limegreen")
+    grass("green")
     mountain1("grey")
     mountain2("darkgrey")
     mountain3("grey")
@@ -299,8 +298,7 @@ def main():
     tree1()
     tree2()
     tree3()
-    
+       
 main()
 
 window.exitonclick()
-
