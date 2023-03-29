@@ -36,3 +36,6 @@ for p in points:
     t.goto(p.xcoor, p.ycoor)
 
 turtle.Screen().exitonclick() 
+
+
+
