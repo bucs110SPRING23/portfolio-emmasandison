@@ -94,3 +94,8 @@ def main():
 
 
 main()
+
+# Purpose of classes: 
+#   - Grouping related functions and 
+#       keeping them in one place (inside a class) provides a clean 
+#       structure to the code which increases the readability of the program.
