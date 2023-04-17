@@ -17,6 +17,8 @@ class Num:
     def __str__(self): 
         obj_str = f"The number is: {self.data}"
         return obj_str
+        # NO PRINTING
+
 
     # object functions are called methods 
     # using self as the first parameter, makes it method 
@@ -99,3 +101,12 @@ main()
 #   - Grouping related functions and 
 #       keeping them in one place (inside a class) provides a clean 
 #       structure to the code which increases the readability of the program.
+
+
+## Controller - like a model, label for how a class is used 
+
+# Model - data 
+# View - display (pygame)
+# Controller - Logic (director)
+
+# in a gui program, everything is in a class- nothing is in global space 
