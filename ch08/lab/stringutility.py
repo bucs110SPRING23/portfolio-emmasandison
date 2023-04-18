@@ -45,13 +45,12 @@ class StringUtility:
             
                 if char.isupper():
                     start = ord('A')
-                    wrap = 26
                 else:
                     start = ord('a')
-                    wrap = 26
                 
                 char_ord = ord(char)
-                new_pos = ((char_ord - start + len(self.string)) % wrap) + start
+                shift = len(self.string)
+                new_pos = ((char_ord - start + shift) % 26) + start
             
                 result += chr(new_pos)
             else:
