@@ -1,4 +1,4 @@
-def caesar_cipher(text, shift):
+def caesar_decipher(text, shift):
     result = ""
     
     for char in text:
@@ -20,8 +20,8 @@ text = "Rfc osgai zpmul dmv hsknq mtcp rfc jyxw bme"
 shift = 1
 print("Text is : " + text)
 # print("The shift pattern is : " + str(shift))
-print("The decrypted cipher Text is : " + caesar_cipher(text, shift))
+print("The decrypted cipher Text is : " + caesar_decipher(text, shift))
 
 fptr = open("decrypted.txt", "w")
-fptr.write(caesar_cipher(text, shift))
+fptr.write(caesar_decipher(text, shift))
 fptr.close()
