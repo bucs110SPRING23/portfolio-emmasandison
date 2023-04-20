@@ -1,11 +1,14 @@
 
 class StringUtility: 
+    """
+    This class consists of several methods that take a string and alters it differently within each method
+    """
     def __init__(self, string): 
         self.string = string 
 
     def __str__(self): 
         """
-        This method returns the original string 
+        This method returns the original string unchanged
         """
         return self.string 
     
