@@ -1,9 +1,14 @@
 # CS110 Final Exam
 
-## SHORT DESCRIPTION *(1 or 2 sentences describing your program)*
+## SHORT DESCRIPTION 
+My program links two APIS, one called the REST Countries API and the other called the OpenWeatherMap API. The REST Countries API finds the capital city for a given country and the OpenWeatherMap API finds the temperature for that city. The main function then asks the user for a country and links this information into a printed sentence. 
 
-## KNOWN BUGS AND INCOMPLETE PARTS *(list any known bugs or non-working parts)*
+## KNOWN BUGS AND INCOMPLETE PARTS 
+Nope 
 
-## REFERENCES *(any resources you use outside of class materials)*
+## REFERENCES 
+https://www.python.org/
+https://cs110.samoore.page/
 
-## MISCELLANEOUS COMMENTS *(anything else you would like the grader to know)*
+## MISCELLANEOUS COMMENTS 
+Nope
