@@ -18,7 +18,7 @@ def main():
     time = timezone.get()
     
     if time:
-        print(f"The current time in {location} is {time}")
+        print(f"The current time in {location} is {time.strftime('%H:%M:%S')}")
     else:
         print(f"No time data found for {city_name}")
 

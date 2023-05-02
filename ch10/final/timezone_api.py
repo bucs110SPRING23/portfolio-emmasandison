@@ -11,10 +11,18 @@ class TimezoneAPI:
         response = requests.get(self.url)
         if response.status_code == 200: 
             data = response.json()
+            if "formatted" not in data: 
+                print("Error: No time data found.")
+                return None
             time_str = data["formatted"]
             time = datetime.fromisoformat(time_str)
             offset = timedelta(seconds=data["gmtOffset"])
             local_time = time + offset
             return local_time.strftime("%I:%M:%S %p")
+        else: 
+            print("No data found")
+            return None
+
+        
         
        
