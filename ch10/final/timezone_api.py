@@ -15,5 +15,4 @@ class TimezoneAPI:
             offset = timedelta(seconds=data["gmtOffset"])
             local_time = time + offset
             return local_time.strftime("%I:%M:%S %p")
-        
        
