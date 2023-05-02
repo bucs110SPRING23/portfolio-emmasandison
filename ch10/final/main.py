@@ -6,11 +6,12 @@ from geocoding_api import GeocodingAPI
 def main(): 
     location = input("Enter a location (city or country): ").lower().strip()
 
-    geocoding = GeocodingAPI(city)
+    geocoding = GeocodingAPI(location)
     lat, lng = geocoding.get_lat_lng()
 
     if not lat or not lng: 
         print(f"No location found")
+        return
 
     country = CountryAPI(lat, lng)
     city = geocoding.get_city_name()
