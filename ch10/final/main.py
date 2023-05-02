@@ -3,7 +3,7 @@ from timezone_api import TimezoneAPI
 
 
 def main(): 
-    city_name = input("Enter a city name: ").lower().strip()
+    city_name = input("Enter a European city name: ").lower().strip()
 
     location = LocationAPI(city_name)
     if not location.data: 
