@@ -9,7 +9,7 @@ def main():
     capital_city = location_api.get_capital_city(country_name)
 
     if capital_city is not None: 
-        weather_api = WeatherAPI(api_key="ddaf354d5eac5539bc9dd3aedb088d86")
+        weather_api = WeatherAPI(api_key="daa7d8bfee911e4322b7576661a696d0")
         temperature = weather_api.get(capital_city)
 
         if temperature is not None: 
