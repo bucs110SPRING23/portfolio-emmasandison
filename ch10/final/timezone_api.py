@@ -2,11 +2,10 @@ import requests
 from datetime import datetime, timedelta
 
 class TimezoneAPI: 
-    def __init__(self, lat, lng): 
-        self.lat = lat
-        self.lng = lng
-        self.url = f"https://api.timezonedb.com/v2.1/get-time-zone?key=LN6DJUMQBB0Z&format=json&by=position&lat={self.lat}&lng={self.lng}"
-
+    def __init__(self, city): 
+        self.city = city
+        self.url = f"http://api.timezonedb.com/v2.1/get-time-zone?key=LN6DJUMQBB0Z&format=json&by=position&lat=0&lng=0&city={self.city}"
+    
     def get(self): 
         response = requests.get(self.url)
         if response.status_code == 200: 
