@@ -8,7 +8,7 @@ class LocationAPI:
         response = requests.get(self.url.format(country=country_name))
         if response.status_code == 200:
             data = response.json()
-            capital_city = data[0]["capital"]
+            capital_city = data[0]["capital"][0]
             return capital_city
         else:
             return None
