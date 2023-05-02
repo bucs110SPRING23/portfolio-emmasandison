@@ -10,8 +10,10 @@ class TimezoneAPI:
         response = requests.get(self.url)
         if response.status_code == 200: 
             data = response.json()
+            print(data)
             time_str = data["formatted"]
             time = datetime.fromisoformat(time_str)
+            print(time.year, time.month, time.day, time.hour, time.minute, time.second)
             offset = timedelta(seconds=data["gmtOffset"])
             local_time = time + offset
             return local_time.strftime("%I:%M:%S %p")
