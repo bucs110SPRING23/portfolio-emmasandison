@@ -1,21 +1,18 @@
 from country_api import CountryAPI
-from sport_api import SportsAPI
+from timezone_api import TimezoneAPI
 
 
 def main(): 
-    country_name = input("Enter a country name: ")
+    country_name = input("Enter a country name: ").lower().strip()
 
     country = CountryAPI(country_name)
-    country_code = country.get_country_code()
+    timezone = country.data["timezones"][0]
+    timezone_api = TimezoneAPI(timezone)
+    time = timezone_api.get()
 
-    if country_code: 
-        sport = SportsAPI(country_code)
-        most_popular_sport = sport.get_most_popular_sport()
-        if most_popular_sport: 
-            print(f"The most popular sport in {country_name} is {most_popular_sport}")
-        else: 
-            print(f"No popular sports found for {country_name}")
+    if time:
+        print(f"The current time in {country_name} is {time}")
     else: 
-        print(f"Country code not found for {country_name}")
-
+        print(f"No data found for {country_name}")
+    
 main()
