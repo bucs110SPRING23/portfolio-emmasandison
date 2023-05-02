@@ -1,17 +1,14 @@
-import requests 
+import requests
 
-class LocationAPI: 
-    def __init__(self, city): 
-        self.city = city
-        self.url = f"https://api.opencagedata.com/geocode/v1/json?q={self.city}&key=47255ad0d38641cf960e07579964e7f9"
-        self.data = self.get()
+class LocationAPI:
+    def __init__(self):
+        self.url = "https://restcountries.com/v3.1/name/{country}?fullText=true"
 
-    def get(self):
-        response = requests.get(self.url)
-        if response.status_code == 200: 
+    def get_capital_city(self, country_name):
+        response = requests.get(self.url.format(country=country_name))
+        if response.status_code == 200:
             data = response.json()
-            if data["total_results"] > 0: 
-                result = data["results"][0]
-                return result["geometry"]["lat"], result["geometry"]["lng"]
-        return None
-        
+            capital_city = data[0]['capital']
+            return capital_city
+        else:
+            return None

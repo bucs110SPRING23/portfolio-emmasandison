@@ -1,26 +1,24 @@
 from location_api import LocationAPI
-from timezone_api import TimezoneAPI
-from geopy.geocoders import Nominatim
+from weather_api import WeatherAPI
 
 
 def main(): 
-    geolocator = Nominatim(user_agent="my_app")
-    city_name = input("Enter a city name: ").lower().strip()
+    country_name = input("Enter a country name: ").lower().strip()
 
-    location = geolocator.geocode(city_name)
-    if not location:
-        print(f"No data found for {city_name}")
-        return 
-    
-    lat, lng = location.latitude, location.longitude
-    
-    timezone = TimezoneAPI(lat, lng)
-    time = timezone.get()
-    
-    if time:
-        print(f"The current time in {location} is {time.strftime('%H:%M:%S')}")
-    else:
-        print(f"No time data found for {city_name}")
+    location_api = LocationAPI
+    capital_city = location_api.get_capital_city(country_name)
+
+    if capital_city is not None: 
+        weather_api = WeatherAPI(api_key="daa7d8bfee911e4322b7576661a696d0")
+        temperature = weather_api.get(capital_city)
+
+        if temperature is not None: 
+            print(f"The capital of {country_name} is {capital_city}")
+            print(f"The temperature in {capital_city} is {temperature} K")
+        else: 
+            print(f"No weather data for {capital_city}")
+    else: 
+        print(f"Error getting capital city for {country_name}")
 
 main()
 
