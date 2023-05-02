@@ -14,9 +14,8 @@ class WeatherAPI:
         else: 
             return None
         
-    def kelvin_to_farenheit(self, kelvin_temp): 
+    def kelvin_to_fahrenheit(self, kelvin_temp):
         fahrenheit_temp = (kelvin_temp - 273.15) * 1.8 + 32
         return fahrenheit_temp
-
 
         

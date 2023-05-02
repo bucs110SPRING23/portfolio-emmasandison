@@ -13,8 +13,9 @@ def main():
         temperature = weather_api.get(capital_city)
 
         if temperature is not None: 
+            fahrenheit_temp = weather_api.kelvin_to_fahrenheit(temperature)
             print(f"The capital of {country_name} is {capital_city}")
-            print(f"The temperature in {capital_city} is {temperature} K")
+            print(f"The temperature in {capital_city} is {fahrenheit_temp} F")
         else: 
             print(f"No weather data for {capital_city}")
     else: 
