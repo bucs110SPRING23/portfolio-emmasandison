@@ -3,14 +3,8 @@ from datetime import datetime, timedelta
 from location_api import LocationAPI
 
 class TimezoneAPI: 
-    def __init__(self, city): 
-        self.city = city
-        self.location = LocationAPI(city).data
-
-        if not self.location: 
-            raise ValueError(f"No location data found for {city}")
-        
-        self.url = f"http://api.timezonedb.com/v2.1/get-time-zone?key=LN6DJUMQBB0Z&format=json&by=position&lat={self.location['lat']}&lng={self.location['lng']}"
+    def __init__(self, lat, lng): 
+        self.url = f"http://api.timezonedb.com/v2.1/get-time-zone?key=LN6DJUMQBB0Z&format=json&by=position&lat={lat}&lng={lng}"
     
     
     def get(self): 

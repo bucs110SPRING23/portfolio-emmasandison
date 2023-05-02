@@ -1,23 +1,26 @@
 from location_api import LocationAPI
 from timezone_api import TimezoneAPI
+from geopy.geocoders import Nominatim
 
 
 def main(): 
+    geolocator = Nominatim(user_agent="my_app")
     city_name = input("Enter a city name: ").lower().strip()
 
-    location = LocationAPI(city_name)
-    if not location.data: 
+    location = geolocator.geocode(city_name)
+    if not location:
         print(f"No data found for {city_name}")
         return 
     
-    timezone = TimezoneAPI(city_name)
+    lat, lng = location.latitude, location.longitude
+    
+    timezone = TimezoneAPI(lat, lng)
     time = timezone.get()
     
     if time:
-        print(f"The current time in {city_name.title()} is {time}")
-    else: 
-        print(f"No data found for {city_name.title()}")
- 
+        print(f"The current time in {location} is {time}")
+    else:
+        print(f"No time data found for {city_name}")
 
 main()
 

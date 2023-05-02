@@ -11,6 +11,7 @@ class LocationAPI:
         if response.status_code == 200: 
             data = response.json()
             if data["total_results"] > 0: 
-                return data["results"][0]["geometry"]
+                result = data["results"][0]
+                return result["geometry"]["lat"], result["geometry"]["lng"]
         return None
         
