@@ -7,6 +7,8 @@ class WeatherAPI:
 
     def get(self, city): 
         response = requests.get(self.url.format(city=city, api_key=self.api_key))
+        print("URL:", response.url)
+        print("Response:", response.json())
         if response.status_code == 200: 
             data = response.json()
             temperature = data["main"]["temp"]

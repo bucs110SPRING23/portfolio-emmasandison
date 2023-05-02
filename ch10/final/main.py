@@ -5,7 +5,7 @@ from weather_api import WeatherAPI
 def main(): 
     country_name = input("Enter a country name: ").lower().strip()
 
-    location_api = LocationAPI
+    location_api = LocationAPI()
     capital_city = location_api.get_capital_city(country_name)
 
     if capital_city is not None: 
