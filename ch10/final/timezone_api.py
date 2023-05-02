@@ -2,17 +2,16 @@ import requests
 from datetime import datetime, timedelta
 
 class TimezoneAPI: 
-    def __init__(self, timezone): 
-        self.timezone = timezone
+    def __init__(self, city): 
+        self.city = city
+        self.url = f"http://api.timezonedb.com/v2.1/get-time-zone?key=LN6DJUMQBB0Z&format=json&by=position&lat=0&lng=0&city={self.city}"
 
     def get(self): 
-        url = f"http://worldtimeapi.org/api/timezone/{self.timezone}"
-        response = requests.get(url)
+        response = requests.get(self.url)
         if response.status_code == 200: 
             data = response.json()
-            time_str = data['datetime']
-            time = datetime.fromisoformat(time_str[:-1])
-            offset = timedelta(seconds=data["raw_offset"] + data["dst_offset"])
+            time_str = data['formatted']
+            time = datetime.fromisoformat(time_str)
+            offset = timedelta(seconds=data["gmtOffset"])
             return time + offset
-        else: 
-            raise Exception("No data for timezone")
+       
