@@ -1,17 +1,21 @@
 import requests 
 
 class CountryAPI: 
-    def __init__(self, country_name): 
-        self.country_name = country_name
+    def __init__(self, name): 
+        self.name = name
+        self.url = f"https://restcountries.com/v2/name/{name}?fullText=true"
+        self.data = self.get()
 
     def get(self):
-        url = f"https://restcountries.com/v2/name/{self.country_name}?fullText=true"
-        response = requests.get(url)
+        response = requests.get(self.url)
         if response.status_code == 200: 
-            data = response.json()
-            if data: 
-                return data[0]["alpha2Code"]
-        return None
+            data = response.json()[0]
+            return data
+        else: 
+            raise Exception("Error finding country data")
+        
+    
+
 
     
         
