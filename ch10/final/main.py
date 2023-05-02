@@ -13,10 +13,10 @@ def main():
     city = input("Enter a city of the country: ").lower().strip()
 
     timezone = TimezoneAPI(city)
-    time = timezone.get()
+    formatted_time = timezone.get_local_time()
     
-    if time:
-        print(f"The current date and time in {city.title()}, {country_name.title()} is {time}")
+    if formatted_time:
+        print(f"The current date and time in {city.title()}, {country_name.title()} is {formatted_time}")
     else: 
         print(f"No data found for {city.title()}, {country_name.title()}")
  

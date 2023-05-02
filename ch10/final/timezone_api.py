@@ -14,5 +14,11 @@ class TimezoneAPI:
             time = datetime.fromisoformat(time_str)
             offset = timedelta(seconds=data["gmtOffset"])
             local_time = time + offset
-            return local_time.strftime("%I:%M:%S %p")
+            return local_time
+        
+    def get_local_time(self): 
+        local_time = self.get()
+        if local_time: 
+            formatted_time = local_time.strftime("%I:%M:%S %p")
+            return formatted_time
        
