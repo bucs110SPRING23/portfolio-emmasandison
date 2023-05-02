@@ -1,6 +1,6 @@
 import requests 
 
-class CountryAPI: 
+class LocationAPI: 
     def __init__(self, name): 
         self.name = name
         self.url = f"https://restcountries.com/v3.1/name/{name}?fullText=true"

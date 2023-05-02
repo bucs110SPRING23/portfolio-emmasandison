@@ -1,12 +1,12 @@
-from country_api import CountryAPI
+from location_api import LocationAPI
 from timezone_api import TimezoneAPI
 
 
 def main(): 
     city_name = input("Enter a city name: ").lower().strip()
 
-    country = CountryAPI(city_name)
-    if not country.data: 
+    location = LocationAPI(city_name)
+    if not location.data: 
         print(f"No data found for {city_name}")
         return 
     
