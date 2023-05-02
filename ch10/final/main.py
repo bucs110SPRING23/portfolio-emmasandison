@@ -14,7 +14,7 @@ def main():
     time = timezone.get()
     
     if time:
-        print(f"The current date and time in {city_name.title()} is {time}")
+        print(f"The current time in {city_name.title()} is {time}")
     else: 
         print(f"No data found for {city_name.title()}")
  
