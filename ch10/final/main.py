@@ -3,6 +3,10 @@ from weather_api import WeatherAPI
 
 
 def main(): 
+    """
+    The main function prompts the user to enter a country name and then it retrieves the capital city from the LocationAPI file and if it is found then it uses the WeatherAPI to retrieve the temperature in that location in Kelvin which is then converted to Fahrenheit. 
+    Prints the result or an error message if information cannot be retrieved
+    """
     country_name = input("Enter a country name: ").lower().strip()
 
     location_api = LocationAPI()
@@ -13,7 +17,7 @@ def main():
         temperature = weather_api.get(capital_city)
 
         if temperature is not None: 
-            fahrenheit_temp = weather_api.kelvin_to_fahrenheit(temperature)
+            fahrenheit_temp = round(weather_api.kelvin_to_fahrenheit(temperature), 2)
             print(f"The capital of {country_name} is {capital_city}")
             print(f"The temperature in {capital_city} is {fahrenheit_temp} F")
         else: 
