@@ -17,7 +17,7 @@ def main():
     
     if time:
         formatted_time = time.strftime("%I:%M %p")
-        print(f"The current date and time in {city}, {city.title()} is {time}")
+        print(f"The current date and time in {city.title()}, {country_name.title()} is {time}")
     else: 
         print(f"No data found for {city.title()}, {country_name.title()}")
  
