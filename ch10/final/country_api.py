@@ -15,9 +15,3 @@ class CountryAPI:
             country = data["country"]
             return country
         
-    def titlecase(self): 
-        return self.data.title() if self.data else ""
-        
-    
-       
-    
