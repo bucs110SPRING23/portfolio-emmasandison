@@ -3,7 +3,7 @@ import requests
 class LocationAPI:
     def __init__(self):
         """
-        This function defines the __init__ method nad initializes the url as an instance of LocationAPI
+        This function defines the __init__ method and initializes the url as an instance of LocationAPI
         """
         self.url = "https://restcountries.com/v3.1/name/{country}?fullText=true"
 
